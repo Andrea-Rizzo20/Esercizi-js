@@ -39,7 +39,8 @@ function fetchPersonById(id) {
 //   .catch((err) => console.error(err));
 
   async function stampFetchPerson(){
-    let person =  JSON.parse(await fetchPersonById(2))
+    let personJson = await fetchPersonById(2)
+    let person = await JSON.parse(personJson)
     console.log(person)
   }
 
