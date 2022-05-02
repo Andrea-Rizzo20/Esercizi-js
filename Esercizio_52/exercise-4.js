@@ -5,6 +5,13 @@ const person = {
   age: 25,
 };
 
-const json = JSON.stringify(person, ["id", "age"]);
+function replace(key, value){
+  if(typeof value === 'string'){
+    return undefined
+  }
+  return value
+}
+
+const json = JSON.stringify(person, replace);
 
 console.log(json); // Should return: { id: 1, age: 25 }
