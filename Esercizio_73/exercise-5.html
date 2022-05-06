@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <div id="container">
+      <h2>Person's List</h2>
+      <table id="person-table">
+        <tbody></tbody>
+      </table>
+      <button id="add-row">Add row</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  const addRowButton = document.getElementById('add-row')
+
+  const addRow = () =>{
+    let row = document.createElement('tr')
+    row.innerHTML = '<td>FirstName</td><td>LastName</td><td>Age</td>'
+    document.querySelector('tbody').append(row)
+
+  }
+
+   addRowButton.addEventListener('click', addRow)
+</script>

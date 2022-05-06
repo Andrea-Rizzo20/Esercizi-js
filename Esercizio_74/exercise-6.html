@@ -1,0 +1,61 @@
+<html>
+  <body>
+    <div id="container">
+      <h2>Person's Form</h2>
+      <form id="person-form">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  const form = document.getElementById('person-form')
+
+  const initForm = () =>{
+    let firstNameInput = document.createElement('input')
+    let lastNameInput = document.createElement('input')
+    let ageInput = document.createElement('input')
+
+    firstNameInput.setAttribute('type', 'text')
+    firstNameInput.setAttribute('placeholder', 'FirstName')
+    firstNameInput.setAttribute('id', 'firstName')
+    lastNameInput.setAttribute('type', 'text')
+    lastNameInput.setAttribute('placeholder', 'LastName')
+    lastNameInput.setAttribute('id', 'lastName')
+    ageInput.setAttribute('type', 'text')
+    ageInput.setAttribute('placeholder', 'Age')
+    ageInput.setAttribute('id', 'age')
+
+
+    form.prepend(firstNameInput,lastNameInput,ageInput)
+
+
+
+  };
+
+  window.addEventListener('load', initForm)
+
+  class Person {
+    constructor(firstName, lastName, age){
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+    }
+  }
+
+  const submitPersonForm = (e) => {
+     e.preventDefault();
+    let firstName = document.getElementById('firstName')
+    let lastName = document.getElementById('lastName')
+    let age = document.getElementById('age')
+
+    let person = new Person(firstName.value, lastName.value, age.value)
+    console.log(person)
+  }
+
+  form.addEventListener('submit', submitPersonForm)
+
+
+
+</script>
