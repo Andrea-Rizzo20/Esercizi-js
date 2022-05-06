@@ -29,14 +29,15 @@
     }
   }
 
-  form.addEventListener("submit", async () => {
-    fetch("https://jsonplaceholder.typicode.com/posts", {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application-json;",
       },
       body: JSON.stringify(new Post(titleForm.value, checkForm.value)
       ),
-    });
+    })
   });
 </script>
