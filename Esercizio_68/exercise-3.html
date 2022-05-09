@@ -39,5 +39,6 @@
       body: JSON.stringify(new Post(titleForm.value, checkForm.value)
       ),
     })
+    await form.reset()
   });
 </script>

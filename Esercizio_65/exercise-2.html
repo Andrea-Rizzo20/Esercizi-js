@@ -11,19 +11,18 @@
 </html>
 
 <script>
-  let post = ''
   const fetchPost = document.getElementById('fetch-post')
   const postTitle = document.getElementById('post-title')
-
+  
   function fetchFromLocal(){
     post = JSON.parse(localStorage.getItem('post'))
     return post
   }
-
   
-
+  
+  
   fetchPost.addEventListener('click', () =>{
-    fetchFromLocal();
+    let post = fetchFromLocal();
     postTitle.innerHTML = post.title;
   })
 
